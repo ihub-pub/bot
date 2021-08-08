@@ -9,7 +9,7 @@ branding:
 #     required: false
 #     description: "Text"
 runs:
-#   using: "composite"
+  using: "composite"
   steps:
     - name: "Hello IHub"
       shell: bash
