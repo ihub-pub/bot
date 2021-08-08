@@ -4,10 +4,10 @@ description: "IHub GitHub Actions"
 branding:
   icon: "check"
   color: "gray-dark"
-inputs:
-  text:
-    required: false
-    description: "Text"
+# inputs:
+#   text:
+#     required: false
+#     description: "Text"
 runs:
 #   using: "composite"
   steps:
