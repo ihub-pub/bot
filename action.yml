@@ -14,4 +14,4 @@ runs:
     - name: "Hello IHub"
       shell: bash
       run: |
-        echo "Hello, IHub!“
+        echo "Hello, IHub!"
