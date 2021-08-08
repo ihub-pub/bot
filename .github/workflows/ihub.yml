@@ -1,0 +1,10 @@
+name: Hello
+on:
+  push:
+    branches: main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello
+        uses: ihub-pub/actions@main
