@@ -11,5 +11,5 @@ branding:
 runs:
 #   using: "composite"
   steps:
-    - name: Hello IHub
+    - name: "Hello IHub"
       run: echo Hello, IHub!
