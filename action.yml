@@ -12,4 +12,6 @@ runs:
 #   using: "composite"
   steps:
     - name: "Hello IHub"
-      run: echo Hello, IHub!
+      shell: bash
+      run: |
+        echo "Hello, IHub!“
