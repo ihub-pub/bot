@@ -27,10 +27,12 @@ runs:
         settings-path: ${{ github.workspace }}
 
     - name: Build with Gradle
+      shell: bash
       run: gradle build -x test
 
     - name: Cleanup Gradle Cache
       # Cleans up the Gradle caches before being cached
+      shell: bash
       run: |
         rm -f ~/.gradle/caches/modules-2/modules-2.lock
         rm -f ~/.gradle/caches/**/gc.properties
