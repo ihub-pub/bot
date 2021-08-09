@@ -11,7 +11,26 @@ branding:
 runs:
   using: "composite"
   steps:
-    - name: "Hello IHub"
-      shell: bash
+    - name: Cache Gradle Modules
+      uses: actions/cache@v2
+      with:
+        path: ~/.gradle/caches/
+        key: ${{ runner.os }}-gradle-cache-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+
+    - uses: actions/checkout@v2
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+        server-id: github
+        settings-path: ${{ github.workspace }}
+
+    - name: Build with Gradle
+      run: gradle build -x test
+
+    - name: Cleanup Gradle Cache
+      # Cleans up the Gradle caches before being cached
       run: |
-        echo "Hello, IHub!"
+        rm -f ~/.gradle/caches/modules-2/modules-2.lock
+        rm -f ~/.gradle/caches/**/gc.properties
