@@ -15,6 +15,15 @@ inputs:
     required: false
     description: Is Release
     default: 'false'
+  signingKeyId:
+    required: false
+    description: signingKeyId
+  signingPassword:
+    required: false
+    description: signingPassword
+  signingSecretKey:
+    required: false
+    description: signingSecretKey
 runs:
   using: composite
   steps:
@@ -22,9 +31,10 @@ runs:
       env:
         REPO_USERNAME: ${{ inputs.repoUsername }}
         REPO_PASSWORD: ${{ inputs.repoPassword }}
-        PUBLISH_DOCS: ${{ inputs.release }}
-        PUBLISH_NEED_SIGN: ${{ inputs.release }}
+        SIGNING_KEY_ID: ${{ inputs.signingKeyId }}
+        SIGNING_PASSWORD: ${{ inputs.signingPassword }}
+        SIGNING_SECRET_KEY: ${{ inputs.signingSecretKey }}
       shell: bash
       run: |
         chmod +x gradlew
-        ./gradlew publish
+        ./gradlew publish -DiHubPublish.publishDocs=${{ inputs.release }} -DiHubPublish.publishNeedSign=${{ inputs.release }}
