@@ -11,6 +11,10 @@ inputs:
   repoPassword:
     required: true
     description: Repo Password
+  release:
+    required: false
+    description: Is Release
+    default: 'false'
 runs:
   using: composite
   steps:
@@ -18,6 +22,8 @@ runs:
       env:
         REPO_USERNAME: ${{ inputs.repoUsername }}
         REPO_PASSWORD: ${{ inputs.repoPassword }}
+        PUBLISH_DOCS: ${{ inputs.release }}
+        PUBLISH_NEED_SIGN: ${{ inputs.release }}
       shell: bash
       run: |
         chmod +x gradlew
