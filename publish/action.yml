@@ -15,10 +15,10 @@ runs:
   using: composite
   steps:
     - name: Run with Gradle
+      env:
+        REPO_USERNAME: ${{ inputs.repoUsername }}
+        REPO_PASSWORD: ${{ inputs.repoPassword }}
       shell: bash
       run: |
         chmod +x gradlew
         ./gradlew publish
-      env:
-        REPO_USERNAME: ${{ inputs.repoUsername }}
-        REPO_PASSWORD: ${{ inputs.repoPassword }}
