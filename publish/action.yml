@@ -1,0 +1,26 @@
+name: IHub Publish Actions
+author: IHub
+description: IHub GitHub Gradle Publish Actions
+branding:
+  icon: box
+  color: gray-dark
+inputs:
+  repoUsername:
+    required: false
+    description: Repo Username
+    default: ${{ secrets.REPO_USERNAME }}
+  repoPassword:
+    required: false
+    description: Repo Password
+    default: ${{ secrets.REPO_PASSWORD }}
+runs:
+  using: composite
+  steps:
+    - name: Run with Gradle
+      shell: bash
+      run: |
+        chmod +x gradlew
+        ./gradlew publish
+      env:
+        REPO_USERNAME: ${{ inputs.repoUsername }}
+        REPO_PASSWORD: ${{ inputs.repoPassword }}
