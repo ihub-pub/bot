@@ -4,6 +4,5 @@ npm-debug.log
 !mock-cert.pem
 .env
 coverage
-lib
 .idea
 package-lock.json
