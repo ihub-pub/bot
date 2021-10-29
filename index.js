@@ -15,20 +15,13 @@ module.exports = app => {
 
     app.on("issues", async context => {
         app.log.info("Received issue webhook")
-
-        const issueParams = {
-            owner: context.payload.repository.owner.login,
-            repo: context.payload.repository.name,
-            number: context.payload.issue.number
-        }
-
-        // Get issue
-        const issue = await context.octokit.issues.get(issueParams)
-
-        if (issue.data.pull_request != null) {
+        if (context.payload.issue.pull_request != null) {
             app.log.info("Issue is a PR")
-            // It is a PR, so we need to get the PR
-            const pr = await context.octokit.pullRequests.get(issueParams)
+            const pr = await context.octokit.pulls.get({
+                owner: context.payload.repository.owner.login,
+                repo: context.payload.repository.name,
+                pull_number: context.payload.issue.number
+            })
             createPullRequestStatus(context, pr.data)
         } else {
             app.log.info("Issue is not a PR!")
