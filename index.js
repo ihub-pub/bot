@@ -1,5 +1,6 @@
 const {checkMilestone} = require("./lib/check-milestone")
 const {autoMilestone} = require("./lib/auto-milestone")
+const {updateChangelog} = require("./lib/update-changelog")
 
 module.exports = app => {
     app.log.info("Yay, the app was loaded!")
@@ -7,6 +8,8 @@ module.exports = app => {
     checkMilestone(app)
 
     autoMilestone(app)
+
+    updateChangelog(app)
 
     app.on("workflow_run.completed", async context => {
         const run = context.payload.workflow_run
