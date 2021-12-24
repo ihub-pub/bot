@@ -24,6 +24,10 @@ inputs:
   signingSecretKey:
     required: false
     description: signingSecretKey
+  parallel:
+    required: false
+    description: Is Parallel
+    default: 'true'
 runs:
   using: composite
   steps:
@@ -37,4 +41,4 @@ runs:
       shell: bash
       run: |
         chmod +x gradlew
-        ./gradlew publish -DiHubPublish.publishDocs=${{ inputs.release }} -DiHubPublish.publishNeedSign=${{ inputs.release }}
+        ./gradlew publish -DiHubPublish.publishDocs=${{ inputs.release }} -DiHubPublish.publishNeedSign=${{ inputs.release }} -Dorg.gradle.parallel=${{ inputs.parallel }} -Dorg.gradle.configureondemand=${{ inputs.parallel }}
