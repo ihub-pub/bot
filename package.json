@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "probot": "^12.2.0",
-    "release-drafter-github-app": "^5.15.0"
+    "release-drafter-github-app": "^5.16.1"
   },
   "probot": {
     "apps": ["release-drafter-github-app"]
