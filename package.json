@@ -24,8 +24,8 @@
     "apps": ["release-drafter-github-app"]
   },
   "devDependencies": {
-    "jest": "^28.1.0",
-    "nock": "^13.2.6",
+    "jest": "^28.1.1",
+    "nock": "^13.2.4",
     "smee-client": "^1.2.3"
   },
   "engines": {
