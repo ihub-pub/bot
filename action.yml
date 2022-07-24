@@ -15,4 +15,4 @@ runs:
       shell: bash
       run: |
         chmod +x gradlew
-        ./gradlew ${{ inputs.run }}
+        ./gradlew ${{ inputs.run }} -PiHub.mavenAliYunEnabled=false
