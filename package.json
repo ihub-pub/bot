@@ -17,7 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "probot": "^12.2.7",
+    "probot": "^12.2.8",
     "release-drafter-github-app": "^5.20.1"
   },
   "probot": {
