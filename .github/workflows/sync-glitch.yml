@@ -1,0 +1,16 @@
+name: Glitch Project Sync
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Glitch Project Sync
+        uses: kanadgupta/glitch-sync@main
+        with:
+          auth-token: '${{ secrets.GLITCH_AUTH_TOKEN }}'
+          project-id: '${{ secrets.GLITCH_PROJECT_ID }}'
