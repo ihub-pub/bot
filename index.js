@@ -9,7 +9,7 @@ module.exports = app => {
 
     autoMilestone(app)
 
-    updateChangelog(app)
+    // updateChangelog(app)
 
     app.on("workflow_run.completed", async context => {
         const run = context.payload.workflow_run
