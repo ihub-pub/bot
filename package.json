@@ -17,7 +17,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@vercel/analytics": "^0.1.11",
     "probot": "^12.3.0",
     "release-drafter-github-app": "^5.23.0"
   },
