@@ -2,7 +2,7 @@ const {checkMilestone} = require("./lib/check-milestone")
 const {autoMilestone} = require("./lib/auto-milestone")
 const {updateChangelog} = require("./lib/update-changelog")
 
-module.exports = (app) => {
+module.exports = app => {
     app.log.info("Yay, the app was loaded!")
 
     checkMilestone(app)

@@ -28,6 +28,9 @@
     "nock": "^13.3.0",
     "smee-client": "^1.2.3"
   },
+  "engines": {
+    "node": "12.20.1"
+  },
   "jest": {
     "testEnvironment": "node"
   }
