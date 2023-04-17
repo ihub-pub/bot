@@ -11,4 +11,4 @@ console.log("Starting probot server");
 //     webhooksPath: "/api/github/webhooks",
 // });
 
-module.exports.default = defaultApp;
+module.exports = defaultApp;
