@@ -1,9 +1,13 @@
+const {welcome} = require("./lib/welcome")
 const {checkMilestone} = require("./lib/check-milestone")
 const {autoMilestone} = require("./lib/auto-milestone")
 const {updateChangelog} = require("./lib/update-changelog")
+const {workflowRunRetry} = require("./lib/workflow_run-retry")
 
 module.exports = app => {
     app.log.info("Yay, the app was loaded!")
+
+    welcome(app)
 
     checkMilestone(app)
 
@@ -11,23 +15,8 @@ module.exports = app => {
 
     // updateChangelog(app)
 
-    app.on("workflow_run.completed", async context => {
-        const run = context.payload.workflow_run
-        // 定时任务或者发布任务工作流失败时重试，最多重试4次
-        if ((run.event === "schedule" || run.event === "release") && run.conclusion === "failure" && run.run_attempt < 5) {
-            app.log.info("Rerun Workflow Run")
-            await context.octokit.request('POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun', {
-                owner: context.payload.repository.owner.login,
-                repo: context.payload.repository.name,
-                run_id: run.id
-            })
-        }
-    });
+    workflowRunRetry(app)
 
-    app.on("issues.opened", async (context) => {
-        return context.octokit.issues.createComment(
-            context.issue({ body: "Hello, World!" })
-        );
-    });
+    require("release-drafter-github-app")(app)
 
 }
