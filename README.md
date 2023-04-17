@@ -1,6 +1,6 @@
 # bot
 
-[![Glitch Project Sync](https://github.com/ihub-pub/bot/actions/workflows/sync-glitch.yml/badge.svg)](https://github.com/ihub-pub/bot/actions/workflows/sync-glitch.yml)
+[![Vercel](https://vercelbadge.vercel.app/api/ihub-pub/bot)](https://vercel.com/)
 
 IHub自动化工具应用集，组合应用如下：
 
