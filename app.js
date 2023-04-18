@@ -9,7 +9,8 @@ module.exports = app => {
 
     welcome(app)
 
-    checkMilestone(app)
+    // vercel部署后检查状态总是存在延时，导致状态错误，暂时关闭
+    // checkMilestone(app)
 
     autoMilestone(app)
 
