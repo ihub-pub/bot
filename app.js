@@ -3,6 +3,7 @@ const {checkMilestone} = require("./lib/check-milestone")
 const {autoMilestone} = require("./lib/auto-milestone")
 const {updateChangelog} = require("./lib/update-changelog")
 const {workflowRunRetry} = require("./lib/workflow_run-retry")
+const {cleanupCaches} = require("./lib/cleanup-action-caches")
 
 module.exports = app => {
     app.log.info("Yay, the app was loaded!")
@@ -15,6 +16,8 @@ module.exports = app => {
     autoMilestone(app)
 
     // updateChangelog(app)
+
+    cleanupCaches(app)
 
     workflowRunRetry(app)
 
