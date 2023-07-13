@@ -2,7 +2,8 @@ name: Gitee Repo Sync
 
 on:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
 
 jobs:
   sync:
