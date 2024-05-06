@@ -21,6 +21,6 @@ module.exports = app => {
 
     workflowRunRetry(app)
 
-    require("release-drafter-github-app")(app, {})
+    // require("release-drafter-github-app")(app, {})
 
 }
