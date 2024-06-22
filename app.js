@@ -1,5 +1,6 @@
 const {welcome} = require("./lib/welcome")
 const {checkMilestone} = require("./lib/check-milestone")
+const {autoReview} = require("./lib/auto-review")
 const {autoMilestone} = require("./lib/auto-milestone")
 const {updateChangelog} = require("./lib/update-changelog")
 const {workflowRunRetry} = require("./lib/workflow_run-retry")
@@ -14,6 +15,8 @@ module.exports = app => {
     // checkMilestone(app)
 
     autoMilestone(app)
+
+    autoReview(app)
 
     // updateChangelog(app)
 
