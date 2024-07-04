@@ -9,8 +9,13 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+        with:
+          egress-policy: audit
+
       - name: Mirror the Github organization repos to Gitee.
-        uses: Yikun/hub-mirror-action@master
+        uses: Yikun/hub-mirror-action@f88730a07179948fd05e338c40971ae33edffeeb # master
         with:
           src: github/ihub-pub
           dst: gitee/ihub-pub
