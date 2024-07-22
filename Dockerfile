@@ -1,4 +1,4 @@
-FROM node:22-slim@sha256:70666190c55408e0ea297dc9d4be5d89729d888f4bb720d4b77433c117509cc4
+FROM node:22-slim@sha256:426d99333b9d35f568cc604b604ea484aef7d12b21e78a36c4bfbdf5cfa4afe2
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production
