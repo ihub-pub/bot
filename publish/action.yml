@@ -46,4 +46,4 @@ runs:
       shell: bash
       run: |
         chmod +x gradlew
-        ./gradlew publish publishToMavenCentralPortal -DiHubPublish.publishDocs=${{ inputs.release }} -DiHubPublish.publishNeedSign=${{ inputs.release }} -Dorg.gradle.parallel=${{ inputs.parallel }} -Dorg.gradle.configureondemand=${{ inputs.parallel }} -DiHubPublish.applyGithubPom=true -DiHubPublish.publishMavenCentral=true
+        ./gradlew publish -DiHubPublish.publishDocs=${{ inputs.release }} -DiHubPublish.publishNeedSign=${{ inputs.release }} -Dorg.gradle.parallel=${{ inputs.parallel }} -Dorg.gradle.configureondemand=${{ inputs.parallel }} -DiHubPublish.applyGithubPom=true -DiHubPublish.publishMavenCentral=true
