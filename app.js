@@ -1,5 +1,3 @@
-import releaseDrafter from "release-drafter-github-app";
-
 const {welcome} = require("./lib/welcome")
 const {checkMilestone} = require("./lib/check-milestone")
 const {autoReview, autoMerge} = require("./lib/auto-merge")
@@ -8,12 +6,11 @@ const {updateChangelog} = require("./lib/update-changelog")
 const {workflowRunRetry} = require("./lib/workflow_run-retry")
 const {cleanupCaches} = require("./lib/cleanup-action-caches")
 
-module.exports = app => {
+module.exports = (app, options) => {
     app.log.info("Yay, the app was loaded!")
 
     welcome(app)
 
-    // vercel部署后检查状态总是存在延时，导致状态错误，暂时关闭
     checkMilestone(app)
 
     autoMilestone(app)
@@ -27,6 +24,6 @@ module.exports = app => {
 
     workflowRunRetry(app)
 
-    releaseDrafter(app, {})
+    require("release-drafter-github-app")(app, {})
 
 }
