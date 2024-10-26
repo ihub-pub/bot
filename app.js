@@ -12,7 +12,7 @@ module.exports = app => {
     welcome(app)
 
     // vercel部署后检查状态总是存在延时，导致状态错误，暂时关闭
-    // checkMilestone(app)
+    checkMilestone(app)
 
     autoMilestone(app)
 
@@ -25,6 +25,6 @@ module.exports = app => {
 
     workflowRunRetry(app)
 
-    // require("release-drafter-github-app")(app, {})
+    require("release-drafter-github-app")(app, {})
 
 }
