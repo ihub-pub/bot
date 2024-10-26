@@ -1,9 +1,5 @@
 import releaseDrafter from "release-drafter-github-app";
 
-export default async (app, options) => {
-    await releaseDrafter(app, options);
-};
-
 const {welcome} = require("./lib/welcome")
 const {checkMilestone} = require("./lib/check-milestone")
 const {autoReview, autoMerge} = require("./lib/auto-merge")
@@ -30,5 +26,7 @@ module.exports = app => {
     cleanupCaches(app)
 
     workflowRunRetry(app)
+
+    releaseDrafter(app, {})
 
 }
