@@ -5,8 +5,9 @@ const {autoMilestone} = require("./lib/auto-milestone")
 const {updateChangelog} = require("./lib/update-changelog")
 const {workflowRunRetry} = require("./lib/workflow_run-retry")
 const {cleanupCaches} = require("./lib/cleanup-action-caches")
+const {releaseDrafter} = require("./lib/release-drafter")
 
-module.exports = (app, options) => {
+module.exports = app => {
     app.log.info("Yay, the app was loaded!")
 
     welcome(app)
@@ -24,6 +25,7 @@ module.exports = (app, options) => {
 
     workflowRunRetry(app)
 
-    require("release-drafter-github-app")(app, {})
+    // require("release-drafter-github-app")(app, {})
+    releaseDrafter(app, {})
 
 }

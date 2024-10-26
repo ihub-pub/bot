@@ -17,13 +17,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "@actions/core": "^1.11.1",
+    "ignore": "^6.0.2",
     "probot": "^13.3.8",
     "release-drafter-github-app": "^6.0.0"
-  },
-  "probot": {
-    "apps": [
-      "release-drafter-github-app"
-    ]
   },
   "devDependencies": {
     "jest": "^29.7.0",
