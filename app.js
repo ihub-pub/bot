@@ -8,7 +8,7 @@ const {updateChangelog} = require("./lib/update-changelog")
 const {workflowRunRetry} = require("./lib/workflow_run-retry")
 const {cleanupCaches} = require("./lib/cleanup-action-caches")
 
-module.exports = (app, options) => {
+module.exports = app => {
     app.log.info("Yay, the app was loaded!")
 
     welcome(app)
@@ -27,6 +27,6 @@ module.exports = (app, options) => {
 
     workflowRunRetry(app)
 
-    releaseDrafter(app, options)
+    releaseDrafter(app, {})
 
 }
