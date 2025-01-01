@@ -51,6 +51,7 @@ runs:
         SIGNING_PASSWORD: ${{ inputs.signingPassword }}
         SIGNING_SECRET_KEY: ${{ inputs.signingSecretKey }}
         USE_INFERRING_VERSION: ${{ inputs.useInferringVersion }}
+        GITHUB_ACTIONS: 'true'
       shell: bash
       run: |
         chmod +x gradlew
