@@ -28,6 +28,14 @@ inputs:
     required: false
     description: Is Parallel
     default: 'true'
+  applyGithubPom:
+    required: false
+    description: Apply Github Pom
+    default: 'true'
+  publishMavenCentral:
+    required: false
+    description: Publish Maven Central
+    default: 'true'
   useInferringVersion:
     required: false
     description: Use Inferring Version
@@ -46,4 +54,4 @@ runs:
       shell: bash
       run: |
         chmod +x gradlew
-        ./gradlew publish -DiHubPublish.publishDocs=${{ inputs.release }} -DiHubPublish.publishNeedSign=${{ inputs.release }} -Dorg.gradle.parallel=${{ inputs.parallel }} -Dorg.gradle.configureondemand=${{ inputs.parallel }} -DiHubPublish.applyGithubPom=true -DiHubPublish.publishMavenCentral=true
+        ./gradlew publish -DiHubPublish.publishDocs=${{ inputs.release }} -DiHubPublish.publishNeedSign=${{ inputs.release }} -Dorg.gradle.parallel=${{ inputs.parallel }} -Dorg.gradle.configureondemand=${{ inputs.parallel }} -DiHubPublish.applyGithubPom=${{ inputs.applyGithubPom }} -DiHubPublish.publishMavenCentral=${{ inputs.publishMavenCentral }}
