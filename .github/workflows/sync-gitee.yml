@@ -15,7 +15,7 @@ jobs:
           egress-policy: audit
 
       - name: Mirror the Github organization repos to Gitee.
-        uses: Yikun/hub-mirror-action@f88730a07179948fd05e338c40971ae33edffeeb # master
+        uses: Yikun/hub-mirror-action@ec47170fa9d126a4bee5a1ab9359845bb1395248 # master
         with:
           src: github/ihub-pub
           dst: gitee/ihub-pub
