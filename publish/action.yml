@@ -40,6 +40,10 @@ inputs:
     required: false
     description: Use Inferring Version
     default: 'false'
+  publishTask:
+    required: false
+    description: Publish Task
+    default: 'publish'
 runs:
   using: composite
   steps:
@@ -54,4 +58,4 @@ runs:
       shell: bash
       run: |
         chmod +x gradlew
-        ./gradlew publish -DiHubPublish.publishDocs=${{ inputs.release }} -DiHubPublish.publishNeedSign=${{ inputs.release }} -Dorg.gradle.parallel=${{ inputs.parallel }} -Dorg.gradle.configureondemand=${{ inputs.parallel }} -DiHubPublish.applyGithubPom=${{ inputs.applyGithubPom }} -DiHubPublish.publishMavenCentral=${{ inputs.publishMavenCentral }}
+        ./gradlew ${{ publishTask }} -DiHubPublish.publishDocs=${{ inputs.release }} -DiHubPublish.publishNeedSign=${{ inputs.release }} -Dorg.gradle.parallel=${{ inputs.parallel }} -Dorg.gradle.configureondemand=${{ inputs.parallel }} -DiHubPublish.applyGithubPom=${{ inputs.applyGithubPom }} -DiHubPublish.publishMavenCentral=${{ inputs.publishMavenCentral }}
