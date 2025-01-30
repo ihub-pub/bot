@@ -19,7 +19,7 @@
   "dependencies": {
     "@actions/core": "^1.11.1",
     "ignore": "^7.0.3",
-    "probot": "^13.4.1",
+    "probot": "^13.4.2",
     "release-drafter-github-app": "^6.0.0"
   },
   "devDependencies": {
