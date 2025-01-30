@@ -20,7 +20,7 @@
     "@actions/core": "^1.11.1",
     "ignore": "^7.0.3",
     "probot": "^13.4.2",
-    "release-drafter-github-app": "^6.0.0"
+    "release-drafter-github-app": "^6.1.0"
   },
   "devDependencies": {
     "jest": "^29.7.0",
