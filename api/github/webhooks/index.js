@@ -15,11 +15,6 @@ console.log("Starting probot server");
 
 // Export the middleware with a slight delay to ensure probot is loaded
 module.exports = (req, res) => {
-  if (!createNodeMiddleware || !createProbot) {
-    res.status(503).send('Probot is still initializing');
-    return;
-  }
-
   const middleware = createNodeMiddleware(app, {
     probot: createProbot(),
     webhooksPath: "/api/github/webhooks",
