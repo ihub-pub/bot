@@ -1,6 +1,5 @@
 import { createNodeMiddleware, createProbot } from "probot";
-
-const app = require("../../../app");
+import app from "../../../app.js";
 
 console.log("Starting probot server");
 

@@ -1,13 +1,13 @@
-const {welcome} = require("./lib/welcome")
-const {checkMilestone} = require("./lib/check-milestone")
-const {autoReview, autoMerge} = require("./lib/auto-merge")
-const {autoMilestone} = require("./lib/auto-milestone")
-const {updateChangelog} = require("./lib/update-changelog")
-const {workflowRunRetry} = require("./lib/workflow_run-retry")
-const {cleanupCaches} = require("./lib/cleanup-action-caches")
-const {releaseDrafter} = require("./lib/release-drafter")
+import {welcome} from "./lib/welcome.js"
+import {checkMilestone} from "./lib/check-milestone.js"
+import {autoReview, autoMerge} from "./lib/auto-merge.js"
+import {autoMilestone} from "./lib/auto-milestone.js"
+import {updateChangelog} from "./lib/update-changelog.js"
+import {workflowRunRetry} from "./lib/workflow_run-retry.js"
+import {cleanupCaches} from "./lib/cleanup-action-caches.js"
+import {releaseDrafter} from "./lib/release-drafter.js"
 
-module.exports = app => {
+export default app => {
     app.log.info("Yay, the app was loaded!")
 
     welcome(app)
