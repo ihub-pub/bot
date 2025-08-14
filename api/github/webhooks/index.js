@@ -3,7 +3,7 @@ import app from "../../../app.js";
 
 console.log("Starting probot server");
 
-module.exports = createNodeMiddleware(app, {
+export default createNodeMiddleware(app, {
     probot: createProbot(),
     webhooksPath: "/api/github/webhooks",
 });
