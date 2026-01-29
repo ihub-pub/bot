@@ -18,7 +18,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@actions/core": "^2.0.3",
+    "@actions/core": "^3.0.0",
     "ignore": "^7.0.5",
     "probot": "^14.2.4",
     "release-drafter-github-app": "^6.2.0"
