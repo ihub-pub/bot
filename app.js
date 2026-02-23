@@ -4,7 +4,6 @@ import {autoReview, autoMerge} from "./lib/auto-merge.js"
 import {autoMilestone} from "./lib/auto-milestone.js"
 import {workflowRunRetry} from "./lib/workflow_run-retry.js"
 import {cleanupCaches} from "./lib/cleanup-action-caches.js"
-import releaseDrafterGithubApp from "release-drafter-github-app"
 
 export default app => {
     app.log.info("Yay, the app was loaded!")
@@ -21,7 +20,5 @@ export default app => {
     cleanupCaches(app)
 
     workflowRunRetry(app)
-
-    releaseDrafterGithubApp(app, {})
 
 }
