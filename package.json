@@ -20,7 +20,7 @@
   "dependencies": {
     "@actions/core": "^3.0.1",
     "ignore": "^7.0.14",
-    "probot": "^14.3.2"
+    "probot": "^14.3.3"
   },
   "devDependencies": {
     "jest": "^30.5.2",
