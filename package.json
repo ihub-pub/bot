@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@actions/core": "^3.0.1",
-    "ignore": "^7.0.14",
+    "ignore": "^7.0.16",
     "probot": "^14.3.7"
   },
   "devDependencies": {
